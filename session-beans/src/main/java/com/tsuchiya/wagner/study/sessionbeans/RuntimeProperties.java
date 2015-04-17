@@ -18,19 +18,20 @@ public class RuntimeProperties {
     public String changeWaitAndGetUnsafeMessage(String anUnsafeMessage) {
         this.anUnsafeMessage = anUnsafeMessage;
         try {
-            Thread.sleep(500);
+            Thread.sleep(100);
         } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-        return anUnsafeMessage;
+        return this.anUnsafeMessage;
     }
 
     @Lock(LockType.WRITE)
     public String changeWaitAndGetSafeMessage(String aSafeMessage) {
         this.aSafeMessage = aSafeMessage;
         try {
-            Thread.sleep(500);
+            Thread.sleep(100);
         } catch (InterruptedException e) {
         }
-        return aSafeMessage;
+        return this.aSafeMessage;
     }
 }
