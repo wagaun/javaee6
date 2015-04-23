@@ -1,6 +1,7 @@
 package com.tsuchiya.wagner.study.sessionbeans;
 
 import org.hamcrest.CoreMatchers;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -77,6 +78,11 @@ public class RuntimePropertiesTest {
         latch.await();
         assertThat(task1.getOutput(), equalTo(input1));
         assertThat(task2.getOutput(), equalTo(input2));
+    }
+
+    @AfterClass
+    public static void closeEjbContainer() {
+        ejbContainer.close();
     }
 
     private abstract static class ChangeRuntimeProperty implements Runnable {

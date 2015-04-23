@@ -1,0 +1,15 @@
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd"
+         version="3.0">
+    <enterprise-beans>
+        <session>
+            <ejb-name>KnockerImpl</ejb-name>
+            <business-local>com.tsuchiya.wagner.study.sessionbeans.LocalKnocker</business-local>
+            <business-remote>com.tsuchiya.wagner.study.sessionbeans.RemoteKnocker</business-remote>
+            <ejb-class>com.tsuchiya.wagner.study.sessionbeans.KnockerBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
+    </enterprise-beans>
+</ejb-jar>
