@@ -19,7 +19,7 @@ public class FirstAccessTest {
     private final static EJBContainer ejbContainer = EJBContainer.createEJBContainer();
 
     @Test
-    public void oneInstancePerMultipleReferences() throws Exception {
+    public void instancesAreNotShared() throws Exception {
 
         final Context context = ejbContainer.getContext();
 
