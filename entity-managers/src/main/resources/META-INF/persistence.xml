@@ -1,0 +1,21 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+    <persistence-unit name="jpa-example-unit">
+        <jta-data-source>exampleDatabase</jta-data-source>
+        <non-jta-data-source>exampleDatabaseUnmanaged</non-jta-data-source>
+        <class>com.tsuchiya.wagner.study.entitymanagers.jpa.entities.Person</class>
+
+        <properties>
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
+        </properties>
+    </persistence-unit>
+
+    <persistence-unit name="hibernate-example-unit">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>exampleDatabase</jta-data-source>
+        <non-jta-data-source>exampleDatabaseUnmanaged</non-jta-data-source>
+        <properties>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+        </properties>
+    </persistence-unit>
+</persistence>
